@@ -12,20 +12,24 @@
 <div class="container">
     <h1>Inventory Management System</h1>
     <hr>
-    <h2>Save New Medicine</h2>
+    <h2>Save Inventory</h2>
 
-    <form action="#" method="POST" th:action="@{/saveMedicine}"
-          th:object="${medicine}">
+    <form action="#" method="POST" th:action="@{/saveInventory}"
+          th:object="${inventory}">
+
+        <input class="form-control mb-4 col-4" placeholder="Doner Receiver ID"
+               th:field="*{donorReceiverId}" type="text">
+
         <input class="form-control mb-4 col-4" placeholder="Medicine Name"
-               th:field="*{id}" type="text">
-
-        <input class="form-control mb-4 col-4" placeholder="Quantity"
                th:field="*{medicineName}" type="text">
 
-        <input class="form-control mb-4 col-4" placeholder="Expiry Date [DD-MM-YYYY] "
-               th:field="*{medicineFormula}" type="text">
+        <input class="form-control mb-4 col-4" placeholder="Quantity"
+               th:field="*{quantity}" type="text">
 
-        <button class="btn btn-info col-2" type="submit"> Save Medicine</button>
+        <input class="form-control mb-4 col-4" placeholder="Expiry Date"
+               th:field="*{expiryDate}" type="text">
+
+        <button class="btn btn-info col-2" type="submit"> Save Inventory</button>
     </form>
 
     <hr>

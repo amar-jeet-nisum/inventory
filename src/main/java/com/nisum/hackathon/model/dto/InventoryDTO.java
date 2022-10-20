@@ -24,4 +24,5 @@ public class InventoryDTO {
     private ShippingMethod shippingMethod;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date shippingDate;
+    private Long donorReceiverId;
 }

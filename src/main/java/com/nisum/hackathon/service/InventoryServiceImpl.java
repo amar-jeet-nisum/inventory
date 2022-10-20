@@ -2,6 +2,7 @@ package com.nisum.hackathon.service;
 
 import com.nisum.hackathon.model.dto.InventoryDTO;
 import com.nisum.hackathon.model.entity.Inventory;
+import com.nisum.hackathon.repository.DonorReceiverRepository;
 import com.nisum.hackathon.repository.InventoryRepository;
 import com.nisum.hackathon.repository.MedicineRepository;
 import org.springframework.beans.BeanUtils;
@@ -23,7 +24,7 @@ public class InventoryServiceImpl implements InventoryService {
     private InventoryRepository inventoryRepository;
 
     @Autowired
-    private MedicineRepository medicineRepository;
+    private DonorReceiverRepository donorReceiverRepository;
 
     @Override
     public List<InventoryDTO> getAllInventories() {
@@ -66,6 +67,7 @@ public class InventoryServiceImpl implements InventoryService {
     public Inventory copyInventoryDtoToEntity(InventoryDTO inventoryDTO) {
         Inventory inventory = new Inventory();
         BeanUtils.copyProperties(inventoryDTO, inventory);
+        inventory.setDonorReceiver(donorReceiverRepository.findById(inventoryDTO.getDonorReceiverId()).get());
         return inventory;
     }
 

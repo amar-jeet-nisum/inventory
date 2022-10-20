@@ -33,12 +33,13 @@
         </thead>
         <tbody>
         <tr th:each="inventory : ${listInventories}">
+            <td hidden th:text="${inventory.donorReceiverId}"></td>
             <td th:text="${inventory.medicineName}"></td>
             <td th:text="${inventory.quantity}"></td>
             <td th:text="${inventory.expiryDate}"></td>
             <td>
-                <a th:href="@{/showFormForUpdate/{id}(id=${inventory.medicine.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteInventory/{id}(id=${inventory.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/showFormForUpdate/{id}(id=${inventory.inventoryId})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteInventory/{id}(id=${inventory.inventoryId})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         </tbody>
