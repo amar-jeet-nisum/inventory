@@ -17,10 +17,10 @@
           method="POST">
 
         <!-- Add hidden form field to handle update -->
-        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{inventoryId}" />
 
         <input class="form-control mb-4 col-4" placeholder="Doner Receiver ID"
-               type="hidden"  th:field="*{inventory.donorReceiver.id}" type="text">
+               th:field="*{donorReceiverId}" type="text">
 
         <input type="text" th:field="*{medicineName}" class="form-control mb-4 col-4">
 

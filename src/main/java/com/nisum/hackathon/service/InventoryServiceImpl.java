@@ -26,6 +26,7 @@ public class InventoryServiceImpl implements InventoryService {
     @Autowired
     private DonorReceiverRepository donorReceiverRepository;
 
+
     @Override
     public List<InventoryDTO> getAllInventories() {
         List<Inventory> inventorys = inventoryRepository.findAll();
@@ -35,6 +36,12 @@ public class InventoryServiceImpl implements InventoryService {
     @Override
     public void saveInventory(InventoryDTO inventoryDTO) {
         inventoryRepository.save(copyInventoryDtoToEntity(inventoryDTO));
+    }
+
+
+    @Override
+    public void save(Inventory inventory) {
+        inventoryRepository.save(inventory);
     }
 
     @Override

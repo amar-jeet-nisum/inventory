@@ -13,6 +13,8 @@ public interface InventoryService {
 
     void saveInventory(InventoryDTO inventory);
 
+    public void save(Inventory inventory);
+
     InventoryDTO getInventoryById(long id);
 
     void deleteInventoryById(long id);
@@ -20,4 +22,6 @@ public interface InventoryService {
     Page<Inventory> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
 
     InventoryDTO copyInventoryEntityToDto(Inventory inventory);
+
+    Inventory copyInventoryDtoToEntity(InventoryDTO inventoryDTO);
 }

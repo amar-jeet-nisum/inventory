@@ -1,6 +1,7 @@
 package com.nisum.hackathon.model.entity;
 
 import com.nisum.hackathon.model.contants.ShippingMethod;
+import com.nisum.hackathon.model.dto.InventoryStatus;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,10 +25,10 @@ public class Inventory {
     private Date expiryDate;
     private ShippingMethod shippingMethod;
     private Date shippingDate;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name="donor_receiver_id", nullable=false)
     private DonorReceiver donorReceiver;
     @Column(name = "image", unique = false)
     private byte[] prescription;
-    private String status;
+    private InventoryStatus status;
 }

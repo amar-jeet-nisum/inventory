@@ -64,7 +64,7 @@ public class InventoryViewController {
                                 @RequestParam("sortField") String sortField,
                                 @RequestParam("sortDir") String sortDir,
                                 Model model) {
-        int pageSize = 5;
+        int pageSize = 10;
 
         Page<Inventory> page = inventoryService.findPaginated(pageNo, pageSize, sortField, sortDir);
         List<Inventory> listInventories = page.getContent();

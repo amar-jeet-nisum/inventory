@@ -21,6 +21,6 @@ public class DonorReceiver {
     private String personName;
     private String address;
     private PersonType personType;
-    @OneToMany(mappedBy="donorReceiver", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="donorReceiver", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Inventory> inventoryList;
 }

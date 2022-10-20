@@ -15,7 +15,7 @@ import java.util.Date;
 @Setter
 public class InventoryDTO {
     private Long inventoryId;
-    private String medicineId;
+   // private String medicineId;
     private String medicineName;
     private String medicineFormula;
     private Integer quantity;
@@ -25,4 +25,6 @@ public class InventoryDTO {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date shippingDate;
     private Long donorReceiverId;
+    private InventoryStatus status;
+    private InventoryStatus inventoryStatus;
 }
